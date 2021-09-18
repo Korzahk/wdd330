@@ -10,6 +10,6 @@ let list = document.getElementById("myList");
 links.forEach((item) => {
   let li = document.createElement("li");
   li.innerText = item.label;
-  li.innerHTML = "...ooo".link("http://www.msn.com");
+  li.innerHTML = item.label.link("http://www.msn.com");
   list.appendChild(li);
 });

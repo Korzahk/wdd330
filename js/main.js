@@ -1,6 +1,6 @@
 const links = [
   {
-    label: "Week1 notes",
+    label: "Week1 Notes",
     url: "week01/index.html"
   }
 ]
@@ -10,5 +10,6 @@ let list = document.getElementById("myList");
 links.forEach((item) => {
   let li = document.createElement("li");
   li.innerText = item.label;
+  li.url = item.url;
   list.appendChild(li);
 });

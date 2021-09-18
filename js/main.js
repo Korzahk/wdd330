@@ -9,6 +9,6 @@ let list = document.getElementById("myList");
 
 links.forEach((item) => {
   let li = document.createElement("li");
-  li.innerText = item;
+  li.innerText = item.label;
   list.appendChild(li);
 });

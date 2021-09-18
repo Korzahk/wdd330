@@ -1,3 +1,4 @@
+
 const links = [
     {
       label: "Week1 notes",
@@ -5,7 +6,8 @@ const links = [
     }
 ]
 
-let list = document.getElementById("myList");
+document.getElementById("myList").innerHTML = 5 + 6;
+/* let list = document.getElementById("myList");
 
 let data = ['Ram', 'Shyam', 'Sita', 'Gita' ];
     

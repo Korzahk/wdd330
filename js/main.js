@@ -4,7 +4,7 @@ const links = [
     url: "week01/index.html"
   }
 ]
-// let data = ["Ram", "Shyam", "Sita", "Gita"];
+
 let list = document.getElementById("myList");
 
 links.forEach((item) => {

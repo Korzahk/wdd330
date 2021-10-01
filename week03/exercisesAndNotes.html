@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercises and Notes</title>
+  </head>
+  <body>
+    <h1><a href="../index.html">WDD 330 Portfolio</a></h1>
+    <h2><a href="index.html">Week03</a></h2>
+    <h3>Exercises / Notes</h3>
+    <ul>
+        <li>Using "this" in object literal
+            My answer: undefined
+            Answer: Error: Cannot read property 'name' of undefined</li>
+        <li>Create a calculator
+            My code: 
+            let calculator = {
+              let v1, v2;
+              read() = {}
+              sum() = { return this.v1 + this.v2; }
+              mul() = { return this.v1 * this.v2 }
+            };
+            Solution: 
+            let calculator = {
+                sum() { return this.a + this.b; },
+              mul() { return this.a * this.b; },
+              read() {
+                    this.a = +prompt('a?', 0);
+                    this.b = +prompt('b?', 0);
+              }
+            };</li>
+        <li>Functions can be chained like this: 
+            ladder.up().up().down().up().down().showStep(); 
+            or like this:
+            ladder
+              .up()
+              .up()
+              .down()
+              .up()
+              .down()
+               .showStep();</li>
+    </ul>
+  </body>
+</html>

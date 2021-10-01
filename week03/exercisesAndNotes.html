@@ -10,35 +10,35 @@
     <h2><a href="index.html">Week03</a></h2>
     <h3>Exercises / Notes</h3>
     <ul>
-        <li>Using "this" in object literal
-            My answer: undefined
+        <li>Using "this" in object literal<br>
+            My answer: undefined<br>
             Answer: Error: Cannot read property 'name' of undefined</li>
-        <li>Create a calculator
-            My code: 
-            let calculator = {
-              let v1, v2;
-              read() = {}
-              sum() = { return this.v1 + this.v2; }
-              mul() = { return this.v1 * this.v2 }
-            };
-            Solution: 
-            let calculator = {
-                sum() { return this.a + this.b; },
-              mul() { return this.a * this.b; },
-              read() {
-                    this.a = +prompt('a?', 0);
-                    this.b = +prompt('b?', 0);
-              }
+        <li>Create a calculator<br>
+            My code: <br>
+            let calculator = {<br>
+              let v1, v2;<br>
+              read() = {}<br>
+              sum() = { return this.v1 + this.v2; }<br>
+              mul() = { return this.v1 * this.v2 }<br>
+            };<br>
+            Solution: <br>
+            let calculator = {<br>
+              sum() { return this.a + this.b; },<br>
+              mul() { return this.a * this.b; },<br>
+              read() {<br>
+                    this.a = +prompt('a?', 0);<br>
+                    this.b = +prompt('b?', 0);<br>
+              }<br>
             };</li>
-        <li>Functions can be chained like this: 
-            ladder.up().up().down().up().down().showStep(); 
-            or like this:
-            ladder
-              .up()
-              .up()
-              .down()
-              .up()
-              .down()
+        <li>Functions can be chained like this: <br>
+            ladder.up().up().down().up().down().showStep(); <br>
+            or like this:<br>
+            ladder<br>
+              .up()<br>
+              .up()<br>
+              .down()<br>
+              .up()<br>
+              .down()<br>
                .showStep();</li>
     </ul>
   </body>

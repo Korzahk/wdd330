@@ -9,16 +9,14 @@
   <body>
     <script>
       function myFunction() {
-        document.getElementById("add").innerHTML = "Hello World";
+        document.getElementById("add").value = "Hello World";
       }
     </script>
     <h1><a href="../index.html">WDD 330 Portfolio</a></h1>
     <h2>Week 6 Challenge 1</h2>
     <h3>Todos</h3>
     <div class='todoList'></div>
-    <form onclick="myFunction()">
-        <input type="text" id="add" name="add" value="">
-        <input type="submit" value="+">
-    </form> 
+    <input type="text" id="add" name="add" value="">
+    <input onclick="myFunction() "value="+">
   </body>
 </html>

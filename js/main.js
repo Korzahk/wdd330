@@ -4,7 +4,8 @@ const links = [
   { label: "Week 3", url: "week03/index.html" },
   { label: "Week 4", url: "week04/index.html" },
   { label: "Week 5", url: "week05/index.html" },
-  { label: "Week 6 Todo List", url: "week06/To-Do.html" }
+  { label: "Week 6 Todo List", url: "week06/To-Do.html" },
+  { label: "Week 7", url: "week07/index.html" },
 ]
 
 let list = document.getElementById("myList");

@@ -6,7 +6,8 @@ const links = [
   { label: "Week 5", url: "week05/index.html" },
   { label: "Week 6 Todo List", url: "week06/To-Do.html" },
   { label: "Week 7", url: "week07/index.html" },
-  { label: "Week 8", url: "week08/index.html" }
+  { label: "Week 8 Notes", url: "week08/notes.html" },
+  { label: "Week 9 Notes", url: "week09/notes.html" }
 ]
 
 let list = document.getElementById("myList");

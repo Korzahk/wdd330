@@ -7,7 +7,9 @@ const links = [
   { label: "Week 6 Todo List", url: "week06/To-Do.html" },
   { label: "Week 7", url: "week07/index.html" },
   { label: "Week 8 Notes", url: "week08/notes.html" },
-  { label: "Week 9 Notes", url: "week09/notes.html" }
+  { label: "Week 9 Notes", url: "week09/notes.html" },
+
+  { label: "Block 2 Challenge: Online Aural Intonation Training", url: "Block2Challenge/index.html" }
 ]
 
 let list = document.getElementById("myList");

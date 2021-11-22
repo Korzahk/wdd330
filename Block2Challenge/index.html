@@ -11,8 +11,12 @@
     <p class="description">
         This is a free resource to develop your aural sense of intonation precision.
     </p>
+    <button type="button" id="play" onclick="myFunction()">play exercise</button> 
     <script>
-    
+      function myFunction() {
+        myAudio = new Audio('audio/p1.mp3');
+        myAudio.play();
+      }
     </script>
   </body>
 </html>

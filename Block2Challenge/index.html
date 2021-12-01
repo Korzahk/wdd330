@@ -11,10 +11,16 @@
     <p class="description">
         This is a free resource to develop your aural sense of intonation precision.
     </p>
-    <button type="button" id="play" onclick="myFunction()">play exercise</button> 
+    <button type="button" id="play" onclick="play()">play exercise</button> 
     <script>
-      function myFunction() {
-        myAudio = new Audio('audio/p1.mp3');
+      function getRandomInt(max) {
+        return Math.floor(Math.random() * max);
+      }
+      function play() {
+        let myInt = (getRandomInt(2) + 1) * 5;
+        let myStr = 'audio/p' + myInt.toString() + '.mp3';
+        console.log(myStr);
+        myAudio = new Audio(myStr);
         myAudio.play();
       }
     </script>

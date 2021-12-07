@@ -28,8 +28,8 @@
       <option value="25" selected>25</option>
     </select>
     <button type="button" id="play" onclick="play()">play exercise</button> 
-    <br>
-    <button type="button" id="sharp" onclick="giveFeedback()">sahrp</button> 
+    <br><br>
+    <button type="button" id="sharp" onclick="giveFeedback()">sharp</button> 
     <br>
     <button type="button" id="flat" onclick="giveFeedback()">flat</button> 
     <br>
@@ -38,11 +38,17 @@
       function getRandomInt(max) {
         return Math.floor(Math.random() * max);
       }
-      let sign;
+      let globalSign = 'u';
       function getSign() {
-        sign = getRandomInt(2);
-        if (sign) return 'p';
-        else return 'n';
+        let sign = getRandomInt(2);
+        if (sign) {
+          globalSign = 'p';
+          return 'p';
+        }
+        else {
+          globalSign = 'n';
+          return 'n';
+        }
       }
       function getMagnitude(myMin, myMax) {
         let myRange = (myMax - myMin) / 5;
@@ -61,8 +67,8 @@
       }
       let myFeedback = document.getElementById('feedback');
       function giveFeedback() {
-        if (sign == 'p') {myFeedback.textContent = 'Correct!!!'; }
-        else { myFeedback.textContent = 'incorrect :(';}
+        if (globalSign == 'p') myFeedback.textContent = 'Correct!!!';
+        else if (globalSign == 'n') myFeedback.textContent = 'incorrect :(';
       }
 
     </script>

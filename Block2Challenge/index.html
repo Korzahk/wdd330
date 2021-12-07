@@ -36,11 +36,13 @@
     <p id="feedback"></p>
 
     <script>
+      let globalSign = 'u';
+      let myFeedback = document.getElementById('feedback');
+
       function getRandomInt(max) {
         return Math.floor(Math.random() * max);
       }
 
-      let globalSign = 'u';
       function getSign() {
         let sign = getRandomInt(2);
         if (sign) {
@@ -52,11 +54,13 @@
           return 'n';
         }
       }
+
       function getMagnitude(myMin, myMax) {
         let myRange = (myMax - myMin) / 5;
         let magnitude = (getRandomInt(myRange) + 1) * 5 + Number(myMin) - 5;
         return magnitude.toString();
       }
+
       function play() {
         let sign = getSign();
         let myMin = document.getElementById('min').value;
@@ -66,18 +70,19 @@
         console.log(myStr);
         myAudio = new Audio(myStr);
         myAudio.play();
+        myFeedback.textContent = '';
       }
-      
-      let myFeedback = document.getElementById('feedback');
+
       function isSharp() {
         if (globalSign == 'p') myFeedback.textContent = 'Correct!!!';
         else if (globalSign == 'n') myFeedback.textContent = 'incorrect :(';
       }
+
       function isFlat() {
         if (globalSign == 'n') myFeedback.textContent = 'Correct!!!';
         else if (globalSign == 'p') myFeedback.textContent = 'incorrect :(';
       }
-
+      
     </script>
   </body>
 </html>

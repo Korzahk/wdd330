@@ -9,10 +9,10 @@
     <h1><a href="../index.html">WDD 330 Portfolio</a></h1>
     <h2>Block 2 Challenge: Free Online Aural Intonation Training</h2>
     <p class="description">
-        This is a free resource to develop your aural sense of intonation precision. 
-        Deep piano notes were used to make it pleasing to the ears for sustained practice.
-        Min represents how close the second note will be from the reference pitch in cents.
-        Max represents how far away the second note will be from the reference pitch in cents.
+        This is a free resource to develop your aural sense of intonation precision.<br> 
+        Deep piano notes were used to make it pleasing to the ears for sustained practice.<br>
+        Min represents how close the second note will be from the reference pitch in cents.<br>
+        Max represents how far away the second note will be from the reference pitch in cents.<br>
         After pressing play, select if you think the second pitch you hear is sharp or flat.
     </p>
     <label for="min">min:</label>
@@ -68,7 +68,7 @@
       }
 
       function getMagnitude(myMin, myMax) {
-        let myRange = (myMax - myMin);
+        let myRange = (myMax - myMin + 1);
         let magnitude = getRandomInt(myRange) + Number(myMin);
         return magnitude.toString();
       }

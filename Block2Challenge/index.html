@@ -39,9 +39,7 @@
       }
       function getMagnitude(myMin, myMax) {
         let myRange = (myMax - myMin) / 5;
-        console.log('myRange: ' + myRange);
-        let magnitude = (getRandomInt(myRange) + 1) * 5 + Number(myMin);
-        console.log('myMin: ' + myMin);
+        let magnitude = (getRandomInt(myRange) + 1) * 5 + Number(myMin) - 5;
         console.log('magnitude: ' + magnitude);
         return magnitude.toString();
       }

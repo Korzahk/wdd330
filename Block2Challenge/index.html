@@ -3,17 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WDD-330-03 Block 2 Challenge: Online Aural Intonation Training</title>
+    <title>Block 2 Challenge: Online Aural Intonation Training</title>
   </head>
   <body>
     <h1><a href="../index.html">WDD 330 Portfolio</a></h1>
     <h2>Block 2 Challenge: Free Online Aural Intonation Training</h2>
     <p class="description">
-        This is a free resource to develop your aural sense of intonation precision.<br> 
-        Deep piano notes were used to make it pleasing to the ears for sustained practice.<br>
-        Min represents how close the second note will be from the reference pitch in cents.<br>
-        Max represents how far away the second note will be from the reference pitch in cents.<br>
-        After pressing play, select if you think the second pitch you hear is sharp or flat.
+        This is a free resource to develop your aural sense of intonation 
+        precision.<br>Deep piano notes were used to make it pleasing to the 
+        ears for sustained practice.<br>Min represents how close the second 
+        note will be from the reference pitch in cents.<br>Max represents how 
+        far away the second note will be from the reference pitch in cents.<br>
+        After pressing play, select if you think the second pitch you hear is 
+        sharp or flat.
     </p>
     <label for="min">min:</label>
     <select id="min" name="min">
@@ -48,29 +50,45 @@
     <p id="feedback"></p>
 
     <script>
-      let globalSign = 'u';
+      // Updated in getSign(), used in isSharp() and isFlat()
+      let globalSign = 'u'; 
+
+      // Utilized in isSharp() and isFlat() 
       let myFeedback = document.getElementById('feedback');
 
+      // Takes in desired range as max.
+      // Returns random number within the range set by html min and max.
+      // Used by getSign() and getMagnitude
       function getRandomInt(max) {
+        // max scales Math.random(), Math.floor() converts it to an integer.
         return Math.floor(Math.random() * max);
       }
 
+      // Determines if second pitch will be sharp or flat.
+      /* Updates the global variable globalSign for the feedback modules 
+          isSharp() and isFlat(). */
       function getSign() {
         let sign = getRandomInt(2);
         if (sign) {
+          // p for positive.
           globalSign = 'p';
           return 'p';
         }
         else {
+          // n for negative.
           globalSign = 'n';
           return 'n';
         }
       }
-
+ 
+      // Takes in the minimum and maximum offset (in cents) of the second pitch.
+      // Returns how many cents off the second pitch will be.
       function getMagnitude(myMin, myMax) {
+        // Computing range of random values.
         let myRange = (myMax - myMin + 1);
-        let magnitude = getRandomInt(myRange) + Number(myMin);
-        return magnitude.toString();
+        // Getting random value and translating it into the actual codomain
+        let magnitude = getRandomInt(myRange) + Number(myMin); 
+        return magnitude.toString(); 
       }
 
       function play() {
@@ -81,8 +99,8 @@
         let myStr = 'audio/' + sign + magnitude + '.mp3';
         console.log(myStr);
         myAudio = new Audio(myStr);
-        myAudio.play();
-        myFeedback.textContent = '';
+        myAudio.play(); // plays chosen audio file
+        myFeedback.textContent = ''; // clear feedback
       }
 
       function isSharp() {

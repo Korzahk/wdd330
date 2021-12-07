@@ -28,6 +28,8 @@
       <option value="25" selected>25</option>
     </select>
     <button type="button" id="play" onclick="play()">play exercise</button> 
+    <br>
+    <p id="feedback"></p>
     <script>
       function getRandomInt(max) {
         return Math.floor(Math.random() * max);
@@ -40,7 +42,6 @@
       function getMagnitude(myMin, myMax) {
         let myRange = (myMax - myMin) / 5;
         let magnitude = (getRandomInt(myRange) + 1) * 5 + Number(myMin) - 5;
-        console.log('magnitude: ' + magnitude);
         return magnitude.toString();
       }
       function play() {
@@ -49,12 +50,16 @@
         let myMax = document.getElementById('max').value;
         let magnitude = getMagnitude(myMin, myMax);
         let myStr = 'audio/' + sign + magnitude + '.mp3';
-        console.log('myMin: ' + myMin);
         console.log(myStr);
-        console.log('myMax: ' + myMax + '\n');
         myAudio = new Audio(myStr);
         myAudio.play();
       }
+      let myFeedback = document.getElementById('feedback');
+      document.addEventListener('keydown', giveFeedback);
+      function giveFeedback(e) {
+        myFeedback.textContent = 'mothafucka';
+      }
+
     </script>
   </body>
 </html>

@@ -56,8 +56,8 @@
       }
 
       function getMagnitude(myMin, myMax) {
-        let myRange = (myMax - myMin) / 5;
-        let magnitude = (getRandomInt(myRange) + 1) * 5 + Number(myMin) - 5;
+        let myRange = (myMax - myMin);
+        let magnitude = (getRandomInt(myRange) + 1) + Number(myMin);
         return magnitude.toString();
       }
 

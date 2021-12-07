@@ -29,15 +29,17 @@
     </select>
     <button type="button" id="play" onclick="play()">play exercise</button> 
     <br><br>
-    <button type="button" id="sharp" onclick="giveFeedback()">sharp</button> 
+    <button type="button" id="sharp" onclick="isSharp()">sharp</button> 
     <br>
-    <button type="button" id="flat" onclick="giveFeedback()">flat</button> 
+    <button type="button" id="flat" onclick="isFlat()">flat</button> 
     <br>
     <p id="feedback"></p>
+
     <script>
       function getRandomInt(max) {
         return Math.floor(Math.random() * max);
       }
+
       let globalSign = 'u';
       function getSign() {
         let sign = getRandomInt(2);
@@ -65,10 +67,15 @@
         myAudio = new Audio(myStr);
         myAudio.play();
       }
+      
       let myFeedback = document.getElementById('feedback');
-      function giveFeedback() {
+      function isSharp() {
         if (globalSign == 'p') myFeedback.textContent = 'Correct!!!';
         else if (globalSign == 'n') myFeedback.textContent = 'incorrect :(';
+      }
+      function isFlat() {
+        if (globalSign == 'n') myFeedback.textContent = 'Correct!!!';
+        else if (globalSign == 'p') myFeedback.textContent = 'incorrect :(';
       }
 
     </script>

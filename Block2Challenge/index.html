@@ -29,13 +29,18 @@
     </select>
     <button type="button" id="play" onclick="play()">play exercise</button> 
     <br>
+    <button type="button" id="sharp" onclick="giveFeedback()">sahrp</button> 
+    <br>
+    <button type="button" id="flat" onclick="giveFeedback()">flat</button> 
+    <br>
     <p id="feedback"></p>
     <script>
       function getRandomInt(max) {
         return Math.floor(Math.random() * max);
       }
+      let sign;
       function getSign() {
-        let sign = getRandomInt(2);
+        sign = getRandomInt(2);
         if (sign) return 'p';
         else return 'n';
       }
@@ -55,9 +60,9 @@
         myAudio.play();
       }
       let myFeedback = document.getElementById('feedback');
-      document.addEventListener('keydown', giveFeedback);
-      function giveFeedback(e) {
-        myFeedback.textContent = 'mothafucka';
+      function giveFeedback() {
+        if (sign == 'p') {myFeedback.textContent = 'Correct!!!'; }
+        else { myFeedback.textContent = 'incorrect :(';}
       }
 
     </script>

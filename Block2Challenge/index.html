@@ -7,10 +7,26 @@
   </head>
   <body>
     <h1><a href="../index.html">WDD 330 Portfolio</a></h1>
-    <h2>Block 2 Challenge: Online Aural Intonation Training</h2>
+    <h2>Block 2 Challenge: Free Online Aural Intonation Training</h2>
     <p class="description">
         This is a free resource to develop your aural sense of intonation precision.
     </p>
+    <label for="min">min:</label>
+    <select id="min" name="min">
+      <option value="5" selected>5</option>
+      <option value="10">10</option>
+      <option value="15">15</option>
+      <option value="20">20</option>
+      <option value="25">25</option>
+    </select>
+    <label for="max">max:</label>
+    <select id="max" name="max">
+      <option value="5">5</option>
+      <option value="10">10</option>
+      <option value="15">15</option>
+      <option value="20">20</option>
+      <option value="25" selected>25</option>
+    </select>
     <button type="button" id="play" onclick="play()">play exercise</button> 
     <script>
       function getRandomInt(max) {
@@ -21,15 +37,21 @@
         if (sign) return 'p';
         else return 'n';
       }
-      function getMagnitude() {
-        let magnitude = (getRandomInt(2) + 1) * 5;
+      function getMagnitude(myMin, myMax) {
+        let myRange = (myMax - myMin) / 5;
+        let magnitude = (getRandomInt(myRange) + 1) * 5 + myMin;
+
         return magnitude.toString();
       }
       function play() {
         let sign = getSign();
-        let magnitude = getMagnitude();
+        let myMin = document.getElementById('min').value;
+        let myMax = document.getElementById('max').value;
+        let magnitude = getMagnitude(myMin, myMax);
         let myStr = 'audio/' + sign + magnitude + '.mp3';
+        console.log(myMin);
         console.log(myStr);
+        console.log(myMax);
         myAudio = new Audio(myStr);
         myAudio.play();
       }

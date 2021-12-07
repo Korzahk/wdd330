@@ -9,9 +9,6 @@ const links = [
   { label: "Week 8 Notes", url: "week08/notes.html" },
   { label: "Week 9 Notes", url: "week09/notes.html" },
   { label: "Week 10 Notes", url: "week10/notes.html" },
-  { label: "Week 11 Notes", url: "week11/notes.html" },
-  { label: "Week 12 Notes", url: "week12/notes.html" },
-  { label: "Week 13 Notes", url: "week13/notes.html" },
   { label: "Week 14 Block 2 Challenge: Online Aural Intonation Training", url: "Block2Challenge/index.html" }
 ]
 

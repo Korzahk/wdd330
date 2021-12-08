@@ -18,7 +18,7 @@
         sharp or flat.
     </p>
     <label for="min">min:</label>
-    <select id="min" name="min">
+    <select id="min" name="min" onchange="validateRange('min')">
       <option value="1">1</option>
       <option value="2">2</option>
       <option value="3">3</option>
@@ -30,7 +30,7 @@
       <option value="25">25</option>
     </select>
     <label for="max">max:</label>
-    <select id="max" name="max">
+    <select id="max" name="max" onchange="validateRange('max')">
       <option value="1">1</option>
       <option value="2">2</option>
       <option value="3">3</option>
@@ -55,6 +55,21 @@
 
       // Utilized in isSharp() and isFlat() 
       let myFeedback = document.getElementById('feedback');
+
+      function validateRange(myStr) {
+        let myMin = document.getElementById('min').value;
+        let myMax = document.getElementById('max').value;
+        if (myMin - myMax) { // if range is impossible
+          if (myStr == 'min') {
+            document.getElementById('max').value 
+              = document.getElementById('min').value;
+          }
+          else {
+            document.getElementById('min').value 
+              = document.getElementById('max').value;
+          }
+        }
+      }
 
       // Takes in desired range as max.
       // Returns random number within the range set by html min and max.

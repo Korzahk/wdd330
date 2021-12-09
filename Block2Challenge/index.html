@@ -57,10 +57,9 @@
       let myFeedback = document.getElementById('feedback');
 
       function validateRange(myStr) {
-        let myMin = document.getElementById('min').value;
-        let myMax = document.getElementById('max').value;
+        let myMin = Number(document.getElementById('min').value);
+        let myMax = Number(document.getElementById('max').value);
         if (myMin > myMax) { // if range is impossible
-          console.log(myMin - myMax);
           if (myStr == 'min') {
             document.getElementById('max').value 
               = document.getElementById('min').value;

@@ -105,7 +105,7 @@
         let magnitude = getRandomInt(myRange) + Number(myMin); 
         // Round down to multiple of 5 if number represents a nonexistant file.
         if ((magnitude > 5) && ((magnitude % 5) != 0)) {
-          magnitude -= magnitude % 10;
+          magnitude += 5 - (magnitude % 10);
         }
         return magnitude.toString(); 
       }

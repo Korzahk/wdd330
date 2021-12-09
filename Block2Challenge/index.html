@@ -103,6 +103,10 @@
         let myRange = (myMax - myMin + 1);
         // Getting random value and translating it into the actual codomain
         let magnitude = getRandomInt(myRange) + Number(myMin); 
+        // Round down to multiple of 5 if number represents a nonexistant file.
+        if ((magnitude > 5) && ((magnitude % 5) != 0)) {
+          magnitude -= magnitude % 10;
+        }
         return magnitude.toString(); 
       }
 

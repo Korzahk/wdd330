@@ -17,6 +17,12 @@
         After pressing play, select if you think the second pitch you hear is 
         sharp or flat.
     </p>
+
+    <input type="radio" id="auto" name="mode" value="auto">
+    <label for="auto" chacked>auto</label>
+    <input type="radio" id="manual" name="mode" value="manual">
+    <label for="manual">manual</label><br>
+    
     <label for="min">min:</label>
     <select id="min" name="min" onchange="validateRange('min')">
       <option value="1">1</option>
@@ -24,10 +30,10 @@
       <option value="3">3</option>
       <option value="4">4</option>
       <option value="5">5</option>
-      <option value="10" selected>10</option>
+      <option value="10">10</option>
       <option value="15">15</option>
       <option value="20">20</option>
-      <option value="25">25</option>
+      <option value="25" selected>25</option>
     </select>
     <label for="max">max:</label>
     <select id="max" name="max" onchange="validateRange('max')">
@@ -103,7 +109,7 @@
         let myRange = (myMax - myMin + 1);
         // Getting random value and translating it into the actual codomain
         let magnitude = getRandomInt(myRange) + Number(myMin); 
-        // Round down to multiple of 5 if number represents a nonexistant file.
+        // Round up to multiple of 5 if number represents a nonexistant file.
         if ((magnitude > 5) && ((magnitude % 5) != 0)) {
           magnitude += 5 - (magnitude % 10);
         }

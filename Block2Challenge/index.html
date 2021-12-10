@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <h1 class="not centered"><a href="../index.html">WDD 330 Portfolio</a></h1>
+    <div class="center">
+    <h1><a href="../index.html">WDD 330 Portfolio</a></h1>
     <h2>Block 2 Challenge: Free Online Aural Intonation Training</h2>
     <p class="description">
         This is a free resource to develop your aural sense of intonation 
@@ -18,14 +19,17 @@
         After pressing play, select if you think the second pitch you hear is 
         sharp or flat.
     </p>
-
-    <input class="not centered" type="radio" id="auto" name="mode" value="auto">
-    <label class="not centered" for="auto" checked="checked">auto</label>
+    </div>
+    <div class="radio">
+    <input type="radio" id="auto" name="mode" value="auto">
+    <label for="auto" checked="checked">--auto--</label>
     <br>
-    <input class="not centered" type="radio" id="manual" name="mode" value="manual">
-    <label class="not centered" for="manual">manual</label>
+    <input type="radio" id="manual" name="mode" value="manual">
+    <label for="manual">manual</label>
     <br><br>
+    </div>
     
+    <div class="center">
     <label for="max">max:</label>
     <select id="max" name="max" onchange="validateRange('max')">
       <option value="1">1</option>
@@ -61,7 +65,8 @@
     <button type="button" id="flat" onclick="isFlat()">flat</button> 
     <br>
     <p id="feedback"></p>
-
+    </div>
+    
     <script>
       // Updated in getSign(), used in isSharp() and isFlat()
       let globalSign = 'u'; 

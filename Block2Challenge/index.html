@@ -19,14 +19,14 @@
     </p>
 
     <input type="radio" id="auto" name="mode" value="auto">
-    <label for="auto" checked>auto</label>
+    <label for="auto" selected>auto</label>
     <br>
     <input type="radio" id="manual" name="mode" value="manual">
     <label for="manual">manual</label>
     <br><br>
     
-    <label for="min">min:</label>
-    <select id="min" name="min" onchange="validateRange('min')">
+    <label for="max">max:</label>
+    <select id="max" name="max" onchange="validateRange('max')">
       <option value="1">1</option>
       <option value="2">2</option>
       <option value="3">3</option>
@@ -37,8 +37,8 @@
       <option value="20">20</option>
       <option value="25" selected>25</option>
     </select>
-    <label for="max">max:</label>
-    <select id="max" name="max" onchange="validateRange('max')">
+    <label for="min">min:</label>
+    <select id="min" name="min" onchange="validateRange('min')">
       <option value="1">1</option>
       <option value="2">2</option>
       <option value="3">3</option>

@@ -19,8 +19,8 @@
         sharp or flat.
     </p>
 
-    <input type="radio" id="auto3" name="mode" value="auto" checked>
-    <label for="auto3" checked="checked">auto&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <input type="radio" id="auto" name="mode" value="auto" checked>
+    <label for="auto" checked="checked">auto&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
     <br>
     <input type="radio" id="manual" name="mode" value="manual">
     <label for="manual">manual</label>
@@ -139,20 +139,24 @@
       function isSharp() {
         if (globalSign == 'p') {
           myFeedback.textContent = 'Correct!!!';
-          console.log(document.getElementsByName("mode").value);
+          if (document.getElementById("auto").checked)
+          console.log("yo");
         }
         else if (globalSign == 'n') {
           myFeedback.textContent = 'incorrect :(';
-          console.log(document.getElementsByName("mode").value);
+          if (document.getElementById("auto").checked)
+          console.log("yo");
         }
       }
 
       function isFlat() {
         if (globalSign == 'n') {
-          myFeedback.textContent = 'Correct!!!';
+          if (document.getElementById("auto").checked)
+          console.log("yo");
         }
         else if (globalSign == 'p') {
-          myFeedback.textContent = 'incorrect :(';
+          if (document.getElementById("auto").checked)
+          console.log("yo");
         }
       }
       

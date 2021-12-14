@@ -139,21 +139,24 @@
       function autoRegulate(correctness) {
         let num = Number(document.getElementById('min').value);
         if (correctness == "correct") {
-          if (num > 5) {
-            document.getElementById('min').value = num - 5;
-            document.getElementById('max').value = num - 5;
-          }
-          else if (num > 1) {
+          if (num == 1) return;
+          else if (num < 10) {
             document.getElementById('min').value = num - 1;
             document.getElementById('max').value = num - 1;
           }
+          else {
+            document.getElementById('min').value = num - 5;
+            document.getElementById('max').value = num - 5;
+          }
+          return;
         }
         else {
-          if (num > 4 && num != 25) {
+          if (num == 25) return;
+          else if (num > 4) {
             document.getElementById('min').value = num + 5;
             document.getElementById('max').value = num + 5;
           }
-          else if (num < 25) {
+          else {
             document.getElementById('min').value = num + 1;
             document.getElementById('max').value = num + 1;
           }

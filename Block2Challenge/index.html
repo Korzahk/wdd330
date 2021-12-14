@@ -136,25 +136,25 @@
         myFeedback.textContent = ''; // clear feedback
       }
 
-      function autoRegulate(myBool) {
+      function autoRegulate(correctness) {
         let num = Number(document.getElementById('min').value);
-        if (myBool)
+        if (correctness == "correct")
+          if (num > 5) {
+            document.getElementById('min').value = num - 5;
+            document.getElementById('max').value = num - 5;
+          }
+          else if (num > 1) {
+            document.getElementById('min').value = num - 1;
+            document.getElementById('max').value = num - 1;
+          }
+        else {
           if (num > 4 && num != 25) {
             document.getElementById('min').value = num + 5;
             document.getElementById('max').value = num + 5;
           }
-          else {
+          else if (num < 25) {
             document.getElementById('min').value = num + 1;
             document.getElementById('max').value = num + 1;
-          }
-        else {
-          if (num > 5 && num != 1) {
-            document.getElementById('min').value = num - 5;
-            document.getElementById('max').value = num - 5;
-          }
-          else {
-            document.getElementById('min').value = num - 1;
-            document.getElementById('max').value = num - 1;
           }
         }
 
@@ -163,22 +163,22 @@
       function isSharp() {
         if (globalSign == 'p') {
           myFeedback.textContent = 'Correct!!!';
-          if (document.getElementById("auto").checked) autoRegulate(1);
+          if (document.getElementById("auto").checked) autoRegulate("correct");
         }
         else if (globalSign == 'n') {
           myFeedback.textContent = 'incorrect :(';
-          if (document.getElementById("auto").checked) autoRegulate(0);
+          if (document.getElementById("auto").checked) autoRegulate("incorrect");
         }
       }
 
       function isFlat() {
         if (globalSign == 'n') {
           myFeedback.textContent = 'Correct!!!';
-          if (document.getElementById("auto").checked) autoRegulate(1);
+          if (document.getElementById("auto").checked) autoRegulate("correct");
         }
         else if (globalSign == 'p') {
           myFeedback.textContent = 'incorrect :(';
-          if (document.getElementById("auto").checked) autoRegulate(0);
+          if (document.getElementById("auto").checked) autoRegulate("incorect");
         }
       }
       

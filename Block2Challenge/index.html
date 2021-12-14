@@ -59,7 +59,7 @@
     <button type="button" id="sharp" onclick="isSharp()">sharp</button> 
     <br class="halfBr">
     <button type="button" id="flat" onclick="isFlat()">flat</button> 
-    <br><br>
+    <br>
 
     <p id="feedback"></p>
 
@@ -140,29 +140,21 @@
         let num = Number(document.getElementById('min').value);
         if (myBool)
           if (num > 4 && num != 25) {
-            document.getElementById('min').value = 
-              Number(document.getElementById('min').value) + 5;
-            document.getElementById('max').value = 
-              Number(document.getElementById('max').value) + 5;
+            document.getElementById('min').value = num + 5;
+            document.getElementById('max').value = num + 5;
           }
           else {
-            document.getElementById('min').value = 
-              Number(document.getElementById('min').value) + 1;
-            document.getElementById('max').value = 
-              Number(document.getElementById('max').value) + 1;
+            document.getElementById('min').value = num + 1;
+            document.getElementById('max').value = num + 1;
           }
         else {
           if (num > 5 && num != 1) {
-            document.getElementById('min').value = 
-              Number(document.getElementById('min').value) - 5;
-            document.getElementById('max').value = 
-              Number(document.getElementById('max').value) - 5;
+            document.getElementById('min').value = num - 5;
+            document.getElementById('max').value = num - 5;
           }
           else {
-            document.getElementById('min').value = 
-              Number(document.getElementById('min').value) - 1;
-            document.getElementById('max').value = 
-              Number(document.getElementById('max').value) - 1;
+            document.getElementById('min').value = num - 1;
+            document.getElementById('max').value = num - 1;
           }
         }
 

@@ -1,5 +1,7 @@
 body{
   text-align: center;
+  background-color: rgb(84, 78, 85);
+  color: white;
 }
 .halfBr {
 margin-bottom: 0.5em;

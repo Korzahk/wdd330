@@ -19,7 +19,7 @@
         sharp or flat.
     </p>
 
-    <input type="radio" id="auto" name="mode" value="auto" onclick="foo()" checked>
+    <input type="radio" id="auto" name="mode" value="auto" onclick="validateRange('max')" checked>
     <label for="auto" checked="checked">auto&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
     <br>
     <input type="radio" id="manual" name="mode" value="manual">
@@ -64,8 +64,6 @@
     <p id="feedback"></p>
 
     <script>
-      function foo() { console.log('yo'); }
-
       // Updated in getSign(), used in isSharp() and isFlat()
       let globalSign = 'u'; 
 

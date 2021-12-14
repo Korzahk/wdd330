@@ -19,7 +19,7 @@
         sharp or flat.
     </p>
 
-    <input type="radio" id="auto" name="mode" value="auto" checked>
+    <input type="radio" id="auto" name="mode" value="auto" onclick="validateRange('max')" checked>
     <label for="auto" checked="checked">auto&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
     <br>
     <input type="radio" id="manual" name="mode" value="manual">
@@ -73,7 +73,7 @@
       function validateRange(myStr) {
         let myMin = Number(document.getElementById('min').value);
         let myMax = Number(document.getElementById('max').value);
-        if (myMin > myMax) { // if range is impossible
+        if ((myMin > myMax) || document.getElementById("auto").checked) {
           if (myStr == 'min') {
             document.getElementById('max').value 
               = document.getElementById('min').value;
@@ -136,27 +136,57 @@
         myFeedback.textContent = ''; // clear feedback
       }
 
+      function autoRegulate(myBool) {
+        let num = Number(document.getElementById('min').value);
+        if (myBool)
+          if (num > 4 && num != 25) {
+            document.getElementById('min').value = 
+              Number(document.getElementById('min').value) + 5;
+            document.getElementById('max').value = 
+              Number(document.getElementById('max').value) + 5;
+          }
+          else {
+            document.getElementById('min').value = 
+              Number(document.getElementById('min').value) + 1;
+            document.getElementById('max').value = 
+              Number(document.getElementById('max').value) + 1;
+          }
+        else {
+          if (num > 5 && num != 1) {
+            document.getElementById('min').value = 
+              Number(document.getElementById('min').value) - 5;
+            document.getElementById('max').value = 
+              Number(document.getElementById('max').value) - 5;
+          }
+          else {
+            document.getElementById('min').value = 
+              Number(document.getElementById('min').value) - 1;
+            document.getElementById('max').value = 
+              Number(document.getElementById('max').value) - 1;
+          }
+        }
+
+      }
+
       function isSharp() {
         if (globalSign == 'p') {
           myFeedback.textContent = 'Correct!!!';
-          if (document.getElementById("auto").checked)
-          console.log("yo");
+          if (document.getElementById("auto").checked) autoRegulate(1);
         }
         else if (globalSign == 'n') {
           myFeedback.textContent = 'incorrect :(';
-          if (document.getElementById("auto").checked)
-          console.log("yo");
+          if (document.getElementById("auto").checked) autoRegulate(0);
         }
       }
 
       function isFlat() {
         if (globalSign == 'n') {
-          if (document.getElementById("auto").checked)
-          console.log("yo");
+          myFeedback.textContent = 'Correct!!!';
+          if (document.getElementById("auto").checked) autoRegulate(1);
         }
         else if (globalSign == 'p') {
-          if (document.getElementById("auto").checked)
-          console.log("yo");
+          myFeedback.textContent = 'incorrect :(';
+          if (document.getElementById("auto").checked) autoRegulate(0);
         }
       }
       
